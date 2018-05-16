@@ -33,7 +33,7 @@ def train_model():
     training_feature_vector = count_vectorizer.transform(training_data)
     test_feature_vector = count_vectorizer.transform(testing_data)
 
-    # model declaration and training
+    # model declaration and training  mandar una opcion  una red neuronal metodos random forest  cm (matriz de confusion)
     naive_bayes_model = GaussianNB()
     naive_bayes_model.fit(training_feature_vector.toarray(), training_targets)
 
@@ -41,6 +41,7 @@ def train_model():
     test_data_predicted = naive_bayes_model.predict(test_feature_vector.toarray())
 
     cm = metrics.confusion_matrix(test_targets, test_data_predicted)
+    print (cm)
     score = metrics.accuracy_score(test_targets, test_data_predicted)
 
     logger.debug("TRAIN SCORE: %s", score)
@@ -129,6 +130,10 @@ def load_training_data():
         'agradecimientos':{
             'intents':['Gracias', 'Te lo agradezco'],
             'examples': ['Gracias', 'Te lo agradezco']
+        },
+        'reproduce':{
+            'intents':['reproduce','quiero escuchar'],
+            'examples':['repruduce juanes']
         }
     }
 

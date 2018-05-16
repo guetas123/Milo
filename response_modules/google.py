@@ -1,5 +1,8 @@
 
-def get_response():
+def get_response(mensaje):
+
+
+
     """
     This function returns a definition based on a query, in this case the function
     will return a definition as an answer
@@ -8,6 +11,6 @@ def get_response():
 
     # TODO: Implement google search
 
-    return "Sorry I'm this skill is in maintenance"
+    return "BUscando"+mensaje 
 
 
